@@ -4,10 +4,12 @@ import database
 from automotice_oem import oem_api
 # from database import get_database_connection
 from models.UserModel import User
+from demoapp.user_routes import user_api
 
 
 app = FastAPI()
 app.include_router(oem_api.oem_router)
+app.include_router(user_api.user_router)
 
 
 @app.get("/")
